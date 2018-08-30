@@ -25,7 +25,9 @@ class App extends Component {
           else { return subscriptionInstance; }
         })
         .then((subscription) => {
-          console.log('subscription', subscription);
+          console.log('subscription endpoint', subscription.endpoint);
+          console.log('subscription p256dh', subscription.getKey('p256dh'));
+          console.log('subscription auth', subscription.getKey('auth'));
           // post 'subscription' to your api to save this information to your database
         })
         .catch((error) => {
